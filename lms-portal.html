@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduFlow - Student Learning Management System. Access courses, track progress, submit assignments, and collaborate with peers.">
+    <meta name="author" content="EduFlow Team">
+    <title>EduFlow - Student Portal | Learning Management System</title>
+    <link rel="stylesheet" href="lms.css">
+</head>
+<body>
+    <!-- HEADER / TOP NAVIGATION -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo-section">
+                <svg class="header__logo" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="EduFlow Logo">
+                    <rect x="4" y="8" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 16L20 20L28 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="20" cy="32" r="2" fill="currentColor"/>
+                </svg>
+                <span class="header__brand">EduFlow</span>
+            </div>
+
+            <nav class="header__nav" aria-label="Main Navigation">
+                <a href="#dashboard" class="header__nav-link">Dashboard</a>
+                <a href="#courses" class="header__nav-link">My Courses</a>
+                <a href="#assignments" class="header__nav-link">Assignments</a>
+                <a href="#grades" class="header__nav-link">Grades</a>
+            </nav>
+
+            <div class="header__user">
+                <button class="header__notifications" aria-label="View notifications">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2C5.58 2 2 5.58 2 10C2 14.42 5.58 18 10 18C14.42 18 18 14.42 18 10C18 5.58 14.42 2 10 2Z" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="10" cy="10" r="2" fill="currentColor"/>
+                    </svg>
+                    <span class="header__notification-badge" aria-label="3 new notifications">3</span>
+                </button>
+                <div class="header__profile">
+                    <div class="header__avatar" aria-label="User avatar">SI</div>
+                    <div class="header__profile-menu">
+                        <div class="header__profile-name">Sajal Islam</div>
+                        <div class="header__profile-role">Student</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="sidebar" aria-label="Dashboard Navigation">
+            <nav class="sidebar__nav">
+                <h2 class="sidebar__title">Menu</h2>
+                <ul class="sidebar__list">
+                    <li class="sidebar__item">
+                        <a href="#dashboard" class="sidebar__link sidebar__link--active" aria-current="page">
+                            <svg width="10" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="3" y="3" width="5" height="7" stroke="currentColor" stroke-width="1.5" rx="1"/>
+                                <rect x="10" y="3" width="5" height="7" stroke="currentColor" stroke-width="1.5" rx="1"/>
+                                <rect x="3" y="10" width="5" height="7" stroke="currentColor" stroke-width="1.5" rx="1"/>
+                                <rect x="10" y="10" width="5" height="7" stroke="currentColor" stroke-width="1.5" rx="1"/>
+                            </svg>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="#courses" class="sidebar__link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M3 4C3 3.45 3.45 3 4 3H16C16.55 3 17 3.45 17 4V12C17 12.55 16.55 13 16 13H4C3.45 13 3 12.55 3 12V4Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M3 13H17M5 16H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            My Courses
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="#assignments" class="sidebar__link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M4 2C3.45 2 3 2.45 3 3V17C3 17.55 3.45 18 4 18H16C16.55 18 17 17.55 17 17V3C17 2.45 16.55 2 16 2H4Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M6 5H14M6 8H14M6 11H12M6 14H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            Assignments
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="#grades" class="sidebar__link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M3 5C3 4.45 3.45 4 4 4H16C16.55 4 17 4.45 17 5V14C17 14.55 16.55 15 16 15H4C3.45 15 3 14.55 3 14V5Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M3 5H17M6 4V15M10 4V15M14 4V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            Grades
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="#resources" class="sidebar__link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M4 4C4 3.45 4.45 3 5 3H15C15.55 3 16 3.45 16 4V16C16 16.55 15.55 17 15 17H5C4.45 17 4 16.55 4 16V4Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M6 6H14M6 9H14M6 12H12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            Resources
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="#schedule" class="sidebar__link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="3" y="4" width="14" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M6 3V5M14 3V5M3 8H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            Schedule
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- CONTENT AREA -->
+        <div class="content">
+            <!-- DASHBOARD SECTION -->
+            <section class="dashboard" id="dashboard" aria-labelledby="dashboard-title">
+                <div class="dashboard__header">
+                    <div class="dashboard__title-block">
+                        <h1 class="dashboard__title" id="dashboard-title">Welcome Back, Sajal! 👋</h1>
+                        <p class="dashboard__subtitle">You have 3 active courses and 2 pending assignments</p>
+                    </div>
+                    <div class="dashboard__stats">
+                        <div class="stat-card">
+                            <div class="stat-card__value">3</div>
+                            <div class="stat-card__label">Active Courses</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__value">87%</div>
+                            <div class="stat-card__label">Average Score</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__value">2</div>
+                            <div class="stat-card__label">Pending Tasks</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MY COURSES SECTION -->
+            <section class="courses-section" id="courses" aria-labelledby="courses-title">
+                <h2 class="section-title" id="courses-title">My Courses</h2>
+                <div class="courses-grid">
+                    <!-- COURSE CARD 1 -->
+                    <article class="course-card">
+                        <div class="course-card__header">
+                            <div class="course-card__badge">In Progress</div>
+                            <div class="course-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M4 6C4 5.45 4.45 5 5 5H19C19.55 5 20 5.45 20 6V15C20 15.55 19.55 16 19 16H5C4.45 16 4 15.55 4 15V6Z" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M4 6H20M8 5V16M16 5V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="course-card__title">Web Development Fundamentals</h3>
+                        <p class="course-card__instructor">Instructor: Prof. James Wilson</p>
+                        <p class="course-card__description">Learn HTML, CSS, and JavaScript essentials for modern web development.</p>
+                        <div class="course-card__progress">
+                            <div class="progress-bar">
+                                <div class="progress-bar__fill" style="width: 72%;"></div>
+                            </div>
+                            <span class="course-card__progress-text">72% Complete</span>
+                        </div>
+                        <div class="course-card__footer">
+                            <span class="course-card__meta">9 lessons • 4 assignments</span>
+                            <a href="#" class="course-card__link">Continue Learning →</a>
+                        </div>
+                    </article>
+
+                    <!-- COURSE CARD 2 -->
+                    <article class="course-card">
+                        <div class="course-card__header">
+                            <div class="course-card__badge course-card__badge--completed">Completed</div>
+                            <div class="course-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="course-card__title">Data Science Basics</h3>
+                        <p class="course-card__instructor">Instructor: Dr. Emily Chen</p>
+                        <p class="course-card__description">Introduction to data analysis, visualization, and machine learning concepts.</p>
+                        <div class="course-card__progress">
+                            <div class="progress-bar">
+                                <div class="progress-bar__fill" style="width: 100%;"></div>
+                            </div>
+                            <span class="course-card__progress-text">100% Complete</span>
+                        </div>
+                        <div class="course-card__footer">
+                            <span class="course-card__meta">8 lessons • 3 assignments</span>
+                            <a href="#" class="course-card__link">Review Course →</a>
+                        </div>
+                    </article>
+
+                    <!-- COURSE CARD 3 -->
+                    <article class="course-card">
+                        <div class="course-card__header">
+                            <div class="course-card__badge">In Progress</div>
+                            <div class="course-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M3 6C3 5.45 3.45 5 4 5H20C20.55 5 21 5.45 21 6V18C21 18.55 20.55 19 20 19H4C3.45 19 3 18.55 3 18V6Z" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M3 9H21M8 5V19M16 5V19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="course-card__title">Advanced Python Programming</h3>
+                        <p class="course-card__instructor">Instructor: Mr. Michael Brown</p>
+                        <p class="course-card__description">Master advanced Python concepts, OOP, and real-world application development.</p>
+                        <div class="course-card__progress">
+                            <div class="progress-bar">
+                                <div class="progress-bar__fill" style="width: 45%;"></div>
+                            </div>
+                            <span class="course-card__progress-text">45% Complete</span>
+                        </div>
+                        <div class="course-card__footer">
+                            <span class="course-card__meta">12 lessons • 6 assignments</span>
+                            <a href="#" class="course-card__link">Continue Learning →</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ASSIGNMENTS SECTION -->
+            <section class="assignments-section" id="assignments" aria-labelledby="assignments-title">
+                <h2 class="section-title" id="assignments-title">Pending Assignments</h2>
+                <div class="assignments-list">
+                    <!-- ASSIGNMENT ITEM 1 -->
+                    <article class="assignment-item">
+                        <div class="assignment-item__left">
+                            <div class="assignment-item__course">Web Development Fundamentals</div>
+                            <h3 class="assignment-item__title">Build a Responsive Portfolio Website</h3>
+                            <p class="assignment-item__description">Create a personal portfolio showcasing your projects using HTML, CSS, and JavaScript.</p>
+                            <div class="assignment-item__meta">
+                                <span class="assignment-item__due">
+                                    <strong>Due:</strong> March 15, 2024
+                                </span>
+                                <span class="assignment-item__status assignment-item__status--pending">Pending Submission</span>
+                            </div>
+                        </div>
+                        <button class="assignment-item__action button button--secondary">Submit Work</button>
+                    </article>
+
+                    <!-- ASSIGNMENT ITEM 2 -->
+                    <article class="assignment-item">
+                        <div class="assignment-item__left">
+                            <div class="assignment-item__course">Advanced Python Programming</div>
+                            <h3 class="assignment-item__title">Implement a Task Management System</h3>
+                            <p class="assignment-item__description">Build a command-line application with CRUD operations and data persistence.</p>
+                            <div class="assignment-item__meta">
+                                <span class="assignment-item__due">
+                                    <strong>Due:</strong> March 20, 2024
+                                </span>
+                                <span class="assignment-item__status assignment-item__status--pending">Pending Submission</span>
+                            </div>
+                        </div>
+                        <button class="assignment-item__action button button--secondary">Submit Work</button>
+                    </article>
+
+                    <!-- ASSIGNMENT ITEM 3 (SUBMITTED) -->
+                    <article class="assignment-item">
+                        <div class="assignment-item__left">
+                            <div class="assignment-item__course">Data Science Basics</div>
+                            <h3 class="assignment-item__title">Exploratory Data Analysis Project</h3>
+                            <p class="assignment-item__description">Analyze a dataset and create visualizations with insights and recommendations.</p>
+                            <div class="assignment-item__meta">
+                                <span class="assignment-item__due">
+                                    <strong>Due:</strong> March 10, 2024
+                                </span>
+                                <span class="assignment-item__status assignment-item__status--submitted">Submitted on March 9</span>
+                            </div>
+                        </div>
+                        <button class="assignment-item__action button button--disabled" disabled>Submitted</button>
+                    </article>
+                </div>
+            </section>
+
+            <!-- GRADES SECTION -->
+            <section class="grades-section" id="grades" aria-labelledby="grades-title">
+                <h2 class="section-title" id="grades-title">Your Grades</h2>
+                <div class="grades-table-wrapper">
+                    <table class="grades-table" role="table">
+                        <thead class="grades-table__head">
+                            <tr>
+                                <th class="grades-table__header" scope="col">Course</th>
+                                <th class="grades-table__header" scope="col">Assignments</th>
+                                <th class="grades-table__header" scope="col">Quiz</th>
+                                <th class="grades-table__header" scope="col">Final Project</th>
+                                <th class="grades-table__header" scope="col">Overall Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody class="grades-table__body">
+                            <tr class="grades-table__row">
+                                <td class="grades-table__cell"><strong>Web Development</strong></td>
+                                <td class="grades-table__cell">92/100</td>
+                                <td class="grades-table__cell">88/100</td>
+                                <td class="grades-table__cell">In Progress</td>
+                                <td class="grades-table__cell grades-table__cell--grade"><strong>A</strong></td>
+                            </tr>
+                            <tr class="grades-table__row">
+                                <td class="grades-table__cell"><strong>Data Science</strong></td>
+                                <td class="grades-table__cell">85/100</td>
+                                <td class="grades-table__cell">90/100</td>
+                                <td class="grades-table__cell">87/100</td>
+                                <td class="grades-table__cell grades-table__cell--grade"><strong>A</strong></td>
+                            </tr>
+                            <tr class="grades-table__row">
+                                <td class="grades-table__cell"><strong>Python Programming</strong></td>
+                                <td class="grades-table__cell">80/100</td>
+                                <td class="grades-table__cell">85/100</td>
+                                <td class="grades-table__cell">In Progress</td>
+                                <td class="grades-table__cell grades-table__cell--grade"><strong>B+</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- RESOURCES SECTION -->
+            <section class="resources-section" id="resources" aria-labelledby="resources-title">
+                <h2 class="section-title" id="resources-title">Learning Resources</h2>
+                <div class="resources-grid">
+                    <!-- RESOURCE CARD 1 -->
+                    <article class="resource-card">
+                        <div class="resource-card__icon resource-card__icon--document">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M6 4C6 3.45 6.45 3 7 3H21C21.55 3 22 3.45 22 4V28C22 28.55 21.55 29 21 29H7C6.45 29 6 28.55 6 28V4Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 8H18M10 12H18M10 16H16M10 20H18M10 24H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="resource-card__title">Study Guides</h3>
+                        <p class="resource-card__description">Comprehensive guides covering all major topics from each course.</p>
+                        <a href="#" class="resource-card__link">Browse Guides →</a>
+                    </article>
+
+                    <!-- RESOURCE CARD 2 -->
+                    <article class="resource-card">
+                        <div class="resource-card__icon resource-card__icon--video">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect x="4" y="6" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M13 14L20 18L13 22V14Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="resource-card__title">Video Tutorials</h3>
+                        <p class="resource-card__description">Step-by-step video lessons explaining concepts with practical examples.</p>
+                        <a href="#" class="resource-card__link">Watch Videos →</a>
+                    </article>
+
+                    <!-- RESOURCE CARD 3 -->
+                    <article class="resource-card">
+                        <div class="resource-card__icon resource-card__icon--code">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M10 6L4 16L10 26M22 6L28 16L22 26M18 4L14 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="resource-card__title">Code Examples</h3>
+                        <p class="resource-card__description">Ready-to-use code snippets and project templates for reference.</p>
+                        <a href="#" class="resource-card__link">View Code →</a>
+                    </article>
+
+                    <!-- RESOURCE CARD 4 -->
+                    <article class="resource-card">
+                        <div class="resource-card__icon resource-card__icon--chat">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M4 6C4 5.45 4.45 5 5 5H27C27.55 5 28 5.45 28 6V20C28 20.55 27.55 21 27 21H8L4 25V6Z" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="10" cy="13" r="1.5" fill="currentColor"/>
+                                <circle cx="16" cy="13" r="1.5" fill="currentColor"/>
+                                <circle cx="22" cy="13" r="1.5" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="resource-card__title">Discussion Forum</h3>
+                        <p class="resource-card__description">Connect with peers and instructors to discuss course topics and ask questions.</p>
+                        <a href="#" class="resource-card__link">Join Forum →</a>
+                    </article>
+
+                    <!-- RESOURCE CARD 5 -->
+                    <article class="resource-card">
+                        <div class="resource-card__icon resource-card__icon--book">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M4 6C4 5.45 4.45 5 5 5H16C16.55 5 17 5.45 17 6V26C17 26.55 16.55 27 16 27H5C4.45 27 4 26.55 4 26V6Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M17 6C17 5.45 17.45 5 18 5H27C27.55 5 28 5.45 28 6V26C28 26.55 27.55 27 27 27H17" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M8 10H14M8 14H14M8 18H14M21 10H27M21 14H27M21 18H27" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="resource-card__title">E-Books</h3>
+                        <p class="resource-card__description">Digital textbooks and reference materials in PDF format for download.</p>
+                        <a href="#" class="resource-card__link">Download Books →</a>
+                    </article>
+
+                    <!-- RESOURCE CARD 6 -->
+                    <article class="resource-card">
+                        <div class="resource-card__icon resource-card__icon--star">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M16 3L20.5 12H30L22.5 17.5L25 27L16 21.5L7 27L9.5 17.5L2 12H11.5L16 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="resource-card__title">Best Practices</h3>
+                        <p class="resource-card__description">Industry standards and best practices for professional development work.</p>
+                        <a href="#" class="resource-card__link">Learn More →</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- SCHEDULE SECTION -->
+            <section class="schedule-section" id="schedule" aria-labelledby="schedule-title">
+                <h2 class="section-title" id="schedule-title">This Week's Schedule</h2>
+                <div class="schedule-grid">
+                    <div class="schedule-day">
+                        <h3 class="schedule-day__title">Monday</h3>
+                        <ul class="schedule-day__events">
+                            <li class="schedule-event">
+                                <span class="schedule-event__time">10:00 AM</span>
+                                <span class="schedule-event__title">Web Dev Lecture</span>
+                            </li>
+                            <li class="schedule-event">
+                                <span class="schedule-event__time">2:00 PM</span>
+                                <span class="schedule-event__title">Python Lab Session</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="schedule-day">
+                        <h3 class="schedule-day__title">Tuesday</h3>
+                        <ul class="schedule-day__events">
+                            <li class="schedule-event">
+                                <span class="schedule-event__time">9:00 AM</span>
+                                <span class="schedule-event__title">Data Science Workshop</span>
+                            </li>
+                            <li class="schedule-event">
+                                <span class="schedule-event__time">3:30 PM</span>
+                                <span class="schedule-event__title">Assignment Help Session</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="schedule-day">
+                        <h3 class="schedule-day__title">Wednesday</h3>
+                        <ul class="schedule-day__events">
+                            <li class="schedule-event">
+                                <span class="schedule-event__time">11:00 AM</span>
+                                <span class="schedule-event__title">Web Dev Q&A Forum</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="schedule-day">
+                        <h3 class="schedule-day__title">Thursday</h3>
+                        <ul class="schedule-day__events">
+                            <li class="schedule-event">
+                                <span class="schedule-event__time">1:00 PM</span>
+                                <span class="schedule-event__title">Python Office Hours</span>
+                            </li>
+                            <li class="schedule-event">
+                                <span class="schedule-event__time">4:00 PM</span>
+                                <span class="schedule-event__title">Guest Lecture</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="schedule-day">
+                        <h3 class="schedule-day__title">Friday</h3>
+                        <ul class="schedule-day__events">
+                            <li class="schedule-event">
+                                <span class="schedule-event__time">10:30 AM</span>
+                                <span class="schedule-event__title">Project Review Session</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="schedule-day">
+                        <h3 class="schedule-day__title">Saturday</h3>
+                        <ul class="schedule-day__events">
+                            <li class="schedule-event schedule-event--rest">
+                                <span class="schedule-event__title">Rest Day</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__content">
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">About Us</a></li>
+                        <li><a href="#" class="footer__link">Courses</a></li>
+                        <li><a href="#" class="footer__link">Contact Support</a></li>
+                        <li><a href="#" class="footer__link">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Support</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Help Center</a></li>
+                        <li><a href="#" class="footer__link">Community Forum</a></li>
+                        <li><a href="#" class="footer__link">Contact Us</a></li>
+                        <li><a href="#" class="footer__link">Report Issue</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Legal</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Privacy Policy</a></li>
+                        <li><a href="#" class="footer__link">Terms of Service</a></li>
+                        <li><a href="#" class="footer__link">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 EduFlow. All rights reserved. | Built with semantic HTML and modern CSS</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
